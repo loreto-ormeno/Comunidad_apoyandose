@@ -1,0 +1,29 @@
+Requisitos Cinturón Rojo:
+Inicio de sesión y Registro con validaciones.
+Los errores de validación se deben mostrar en la página.
+Cerrar sesión.
+Página Principal
+El enlace "Cancelar" aparece si el usuario conectado creó la tarea.
+El enlace Cancelar remueve la tarea de la base de datos.
+El enlace "Editar" aparece si el usuario conectado creó la tarea.
+El enlace Editar redirecciona a la página Editar.
+La página principal debe decir "Bienvenido {{ usuario }}"
+El enlace "Ver" redirecciona a la página individual de cada tarea.
+Agregar una tarea
+Validar los campos vacíos.
+El título debe contener al menos 4 caracteres.
+La descripción debe tener al menos 10 caracteres.
+HTML y CSS deben reflejar la estructura como mínimo al 75% de precisión.
+Requisitos Cinturón Negro:
+Debe poder implementar su trabajo en Amazon EC2 y proporcionar la dirección IP o el nombre del dominio donde su aplicación ha sido desplegada. 
+El despliegue en Heroku no cuenta.
+El enlace "Agregar" debe agregar la tarea a Mis Tareas que son únicas para el usuario.
+Cuando una tarea es agregada a Mis Tareas, esta debe ser removida de la tabla de Tareas.
+El enlace "Agregar a Mis Tareas" en la página individual de cada tarea, debe hacer lo mismo que el enlace "Agregar" en la página principal.
+La página Editar debe llenar los campos con la información actual de esa tarea desde la base de datos.
+El enlace Listo en Mis Tareas elimina esa tarea de la base de datos.
+Además:
+Remover su repositorio de Github después de la implementación.
+La estructura está disponible para ser descargada aquí.
+No se preocupe por:
+Lo que pidan las indicaciones, solo pregunte si no está seguro de cuáles son los objetivos.

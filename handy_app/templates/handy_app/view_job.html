@@ -1,0 +1,36 @@
+{% extends "handy_app/base.html"%}
+{% load static %}
+
+{% block title %}View Job{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        <div class="row align-center">
+            <div class="col-4 mt-4">    
+                <h3>{{tarea.title}}</h3>           
+            </div>
+            <div class="col-7 mt-4 align-center d-flex justify-content-end">
+                <h4><a href="{% url 'dashboard' %}">Back</a></h4>
+            </div>
+            <div class="col-1 mt-4 align-center d-flex justify-content-end">
+                <h4><a href="/logout">Logout</a></h4>
+            </div>
+        </div>
+        <div class="row align-center mt-4">
+            <div class="col-10">
+                <div class="row row-cols-1 row-cols-md-2 g-4">           
+                    <div class="col">
+                        <div class="card bordered">
+                            {{tarea.description}}<br><br>
+                            <p>Location: {{tarea.location}}</p><br>
+                            <p>Posted by: {{tarea.creater.first_name}} {{tarea.creater.last_name}}</p><br>
+                            <p>Posted on: {{tarea.created_at}}</p><br>
+                        </div>
+                        <p><a href="/assign/{{tarea.id}}">Add To My Jobs</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

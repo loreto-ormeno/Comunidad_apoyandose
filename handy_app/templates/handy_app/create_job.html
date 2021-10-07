@@ -1,0 +1,70 @@
+{% extends "handy_app/base.html"%}
+{% load static %}
+
+{% block title %}Add A Job{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        {% if messages %}
+        <div class="alert {{ request.session.level_mensaje }} alert-dismissible" role="alert" >
+            <ul>
+                {% for message in messages %}
+                    <li><strong>{{message}}</strong></li>    
+                {% endfor %}                   
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </ul>
+        </div>        
+        {% endif %}  
+
+        <div class="row align-center">
+            <div class="col-4 mt-4">    
+                <h3>Add a Job</h3>           
+            </div>
+            <div class="col-7 mt-4 align-center d-flex justify-content-end">
+                <h4><a href="{% url 'dashboard' %}">Back</a></h4>
+            </div>
+            <div class="col-1 mt-4 align-center d-flex justify-content-end">
+                <h4><a href="/logout">Logout</a></h4>
+            </div>
+        </div>
+        <div class="row align-center mt-4">
+            <div class="col-10">
+                <div class="row row-cols-1 row-cols-md-2 g-4">           
+                    <div class="col">
+                        <form action="/create_job" method="POST">
+                            {% csrf_token %}
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-3 row">
+                                        <label for="title" class="col-sm-3 col-form-label fw-bold">Title</label>
+                                        <div class="col-sm 9">
+                                            <input class="form-control" type="text" name="title" id="title" maxlength=30 required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="description" class="col-sm-3 col-form-label fw-bold">Description</label>
+                                        <div class="col-sm 9">
+                                            <textarea class="form-control" type="text" name="description" id="description" rows=4 maxlength=500 required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="location" class="col-sm-3 col-form-label fw-bold">Location</label>
+                                        <div class="col-sm 9">
+                                            <input class="form-control" type="text" name="location" id="location" maxlength=100 required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <div class="d-grid gap-2 col-4 mx-auto">
+                                        <input class="btn btn-outline-dark" type="submit" value="Submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
